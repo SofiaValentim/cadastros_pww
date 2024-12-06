@@ -117,6 +117,7 @@
     right: 10px; /* Mantém o ícone no canto direito */
     top: 50%;
     transform: translateY(-50%);
+    left: unset !important;
     cursor: pointer;
     color: #004080;
   }
@@ -156,25 +157,14 @@
   <h2>Login</h2>
   <form id="formLogin" onsubmit="handleLogin(event)">
     <div class="field">
-      <i class="fas fa-user"></i>
-      <select id="tipoUsuario" required>
-        <option value="">Selecione o tipo de usuário</option>
-        <option value="usuario">Usuário Comum</option>
-        <option value="funcionario">Funcionário</option>
-        <option value="cliente">Cliente</option>
-        <option value="fornecedor">Fornecedor</option>
-      </select>
-    </div>
-    <div class="field">
       <i class="fas fa-envelope"></i>
-      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="email" id="email" name="email" placeholder="E-mail" required>
     </div>
     <div class="field">
       <i class="fas fa-lock"></i>
-      <input type="password" id="senha" placeholder="Senha" required>
       <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
+      <input type="password" id="senha" name="senha" placeholder="Senha" required>
     </div>
-    <a href="esqueci-senha.html">Esqueci a senha</a>
     <button type="submit">Entrar</button>
   </form>
 </div>
@@ -186,9 +176,8 @@ function handleLogin(event) {
   event.preventDefault(); // Prevent page reload
   const email = document.getElementById('email').value;
   const senha = document.getElementById('senha').value;
-  const tipoUsuario = document.getElementById('tipoUsuario').value;
 
-  if (email && senha && tipoUsuario) {
+  if (email && senha) {
     window.location.href = "home.html"; // Redirect to the homepage
   } else {
     alert('Por favor, preencha todos os campos.');
