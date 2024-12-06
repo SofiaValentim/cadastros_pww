@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS bd_loja;
 CREATE DATABASE bd_loja;
 USE bd_loja;
 
@@ -23,14 +24,12 @@ CREATE TABLE tb_fornecedor (
 
 CREATE TABLE tb_funcionario (
     id_funcionario INT NOT NULL AUTO_INCREMENT,
-    nm_funcionario VARCHAR(30) NOT NULL,
-    nm_sobrenome VARCHAR(30) NOT NULL,
-    dt_nascimento DATE NOT NULL,
+    nm_funcionario VARCHAR(60) NOT NULL,
     nm_cargo VARCHAR(30) NOT NULL,
-    nr_salario DECIMAL(7, 2) NOT NULL,
-    dt_admissao DATE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
+    nr_telefone VARCHAR(11) NOT NULL,
     nm_senha TEXT NOT NULL,
+    dt_admissao DATE NOT NULL,
     PRIMARY KEY (id_funcionario)
 );
 
