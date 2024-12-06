@@ -59,7 +59,8 @@
     font-weight: bold;
   }
   .form-group select,
-  .form-group input {
+  .form-group input,
+  .form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -67,7 +68,8 @@
     font-size: 16px;
   }
   .form-group select:focus,
-  .form-group input:focus {
+  .form-group input:focus,
+  .form-group textarea:focus {
     outline: none;
     border-color: #497baa;
   }
@@ -92,29 +94,15 @@
   <h1>Orçamento</h1>
 </header>
 <div class="form-container">
-  <h2>Selecione a Categoria e Subcategoria</h2>
-  <form action="#" method="post">
+  <h2>Cadastrar categoria</h2>
+  <form action="php/cadastrar-categoria.php" method="post">
     <div class="form-group">
       <label for="categoria">Categoria</label>
-      <select id="categoria" name="categoria" required>
-        <option value="">Selecione</option>
-        <option value="categoria1">Categoria 1</option>
-        <option value="categoria2">Categoria 2</option>
-        <option value="categoria3">Categoria 3</option>
-      </select>
+      <input type="text" name="categoria" id="categoria" placeholder="Nome da Categoria">
     </div>
     <div class="form-group">
-      <label for="subcategoria">Subcategoria</label>
-      <select id="subcategoria" name="subcategoria" required>
-        <option value="">Selecione</option>
-        <option value="subcat1">Subcategoria 1</option>
-        <option value="subcat2">Subcategoria 2</option>
-        <option value="subcat3">Subcategoria 3</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="orcamento">Orçamento Estimado</label>
-      <input type="number" id="orcamento" name="orcamento" placeholder="Digite o valor" required>
+      <label for="descricao">Descrição</label>
+      <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descrição"></textarea>
     </div>
     <div class="form-group">
       <button type="submit">Salvar Orçamento</button>
