@@ -28,6 +28,7 @@ CREATE TABLE tb_funcionario (
     nm_cargo VARCHAR(30) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     nr_telefone VARCHAR(11) NOT NULL,
+    nr_salario DECIMAL(17, 2) NOT NULL,
     nm_senha TEXT NOT NULL,
     dt_admissao DATE NOT NULL,
     PRIMARY KEY (id_funcionario)
