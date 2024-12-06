@@ -15,8 +15,10 @@
         background-color: #e6f7ff;
         color: #333;
         display: flex;
-        min-height: 100vh;
+        flex-direction: column;
+        height: 100vh;
       }
+      /* navbar */
       header {
         width: 100%;
         height: 60px;
@@ -25,10 +27,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 10;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         padding: 0 20px;
       }
@@ -65,6 +63,12 @@
         background-color: #497baa;
         color: #fff;
       }
+
+      /* Sidebar e conteudo */
+      .container {
+        display: flex;
+        flex: 1;
+      }
       .sidebar {
         width: 250px;
         background-color: #ffffff;
@@ -73,10 +77,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        position: fixed;
-        top: 60px; /* Ajusta para não sobrepor o header */
-        bottom: 0;
-        left: 0;
         overflow-y: auto;
       }
       .sidebar img.logo {
@@ -113,7 +113,6 @@
         display: flex;
       }
       .content {
-        margin-left: 270px; /* Espaço para o menu lateral */
         padding: 20px;
         flex: 1;
       }
@@ -134,28 +133,23 @@
         <a href="sair.html">Sair</a>
       </div>
     </header>
-    <div class="sidebar">
-      <img src="Logosemfundo.png" alt="Logotipo" class="logo" />
-      <a href="inicio.html">Tela de Início</a>
-      <a href="configuracoes.html">Configurações</a>
-      <a href="#" class="toggle">Cadastros</a>
-      <div class="submenu">
-        <a href="cadastro_funcionarios.html">Funcionários</a>
-        <a href="cadastro_clientes.html">Clientes</a>
-        <a href="cadastro_fornecedores.html">Fornecedores</a>
-      </div>
-      <a href="#" class="toggle"> Produtos</a>
-      <div class="submenu">
-        <a href="#" class="toggle">cadastros</a>
+    <div class="container">
+      <div class="sidebar">
+        <img src="Logosemfundo.png" alt="Logotipo" class="logo" />
+        <a href="inicio.html">Tela de Início</a>
+        <a href="configuracoes.html">Configurações</a>
+        <a href="#" class="toggle">Cadastros</a>
         <div class="submenu">
-          <a href="categorias_produtos.html">Categorias</a>
-          <a href="orcamento_produtos.html">Orçamento</a>
-          <a href="subcategorias_produtos.html">Subcategorias</a>
+          <a href="cadastro-de-funcionários.html">Funcionários</a>
+          <a href="cadastro-de-cliente.html">Clientes</a>
+          <a href="cadastro-de-fornecedor.html">Fornecedores</a>
+          <a href="cadastro_fornecedores.html">Categorias</a>
+          <a href="cadastro_fornecedores.html">Lançamentos</a>
         </div>
       </div>
-    </div>
-    <div class="content">
-      <h2>Bem-vindo à tela inicial</h2>
+      <div class="content">
+        <h2>Bem-vindo à tela inicial</h2>
+      </div>
     </div>
     <script>
       // Ativa o toggle dos submenus
