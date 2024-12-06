@@ -5,17 +5,17 @@ USE bd_loja;
 CREATE TABLE tb_cliente (
     id_cliente INT NOT NULL AUTO_INCREMENT,
     nm_cliente VARCHAR(30) NOT NULL,
-    nm_sobrenome VARCHAR(30) NOT NULL,
     nm_email VARCHAR(100) NOT NULL,
     nr_telefone VARCHAR(11) NOT NULL,
     nm_endereco VARCHAR(100) NOT NULL,
+    nr_cpf CHAR(11) NOT NULL UNIQUE,
     PRIMARY KEY (id_cliente)
 );
 
 CREATE TABLE tb_fornecedor (
     id_fornecedor INT NOT NULL AUTO_INCREMENT,
     nm_fornecedor VARCHAR(50) NOT NULL,
-    nm_contato VARCHAR(30) NOT NULL,
+    nr_cnpj CHAR(14) NOT NULL UNIQUE,
     nm_email VARCHAR(50) NOT NULL,
     nr_telefone VARCHAR(11) NOT NULL,
     nm_endereco VARCHAR(100) NOT NULL,
