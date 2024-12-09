@@ -53,3 +53,6 @@ CREATE TABLE tb_lancamento (
     FOREIGN KEY (fk_id_funcionario) REFERENCES tb_funcionario (id_funcionario),
     FOREIGN KEY (fk_id_categoria) REFERENCES tb_categoria (id_categoria)
 );
+
+INSERT INTO tb_funcionario VALUES
+(NULL, "", "Administrador", "admin@admin", "", 0, "1234", "2024-12-06");
